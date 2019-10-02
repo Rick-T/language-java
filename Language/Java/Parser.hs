@@ -1090,7 +1090,8 @@ refType =
         (_:bs) <- list1 arrBrackets
         return $ foldl (\f _ -> ArrayType . RefType . f)
                         (ArrayType . PrimType) bs pt) <|>
-    (do ct <- classType
+    (do _ <- optional annotation 
+        ct <- classType
         bs <- list arrBrackets
         return $ foldl (\f _ -> ArrayType . RefType . f)
                             ClassRefType bs ct) <?> "refType"
