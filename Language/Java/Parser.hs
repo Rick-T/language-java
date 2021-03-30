@@ -407,7 +407,8 @@ localVarDecl = do
 varInit :: P VarInit
 varInit =
     InitArray <$> arrayInit <|>
-    InitExp   <$> exp
+    InitExp   <$> exp <|>
+    InitAnnotation <$> annotation
 
 arrayInit :: P ArrayInit
 arrayInit = braces $ do
