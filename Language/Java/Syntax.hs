@@ -162,6 +162,7 @@ data VarDeclId
 data VarInit
     = InitExp Exp
     | InitArray ArrayInit
+    | InitAnnotation Annotation
   deriving (Eq,Show,Read,Typeable,Generic,Data)
 
 -- | A formal parameter in method declaration. The last parameter
